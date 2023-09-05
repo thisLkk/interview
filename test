@@ -1,0 +1,219 @@
+// const PENDING = 'pending'
+// const RESOLVED = 'resolved'
+// const REJECTED = 'rejected'
+
+// class MyPromise {
+//     constructor(fn) {
+//         this.value;
+//         this.status = PENDING;
+//         try {
+//             fn(this.resolve.bind(this), this.reject.bind(this))
+//         } catch (error) {
+//             this.reject.bind(this. error)
+//         }
+//     }
+//     resolve(value) {
+//         if (this.status === PENDING) {
+//             this.value = value
+//             this.status = RESOLVED
+//         }
+//     }
+//     reject(reason) {
+//         if (this.status === PENDING) {
+//             this.value = reason
+//             this.status = REJECTED
+//         }
+//     }
+// }
+// MyPromise.prototype.then = function(onResolve, onReject) {
+//     if (this.status === RESOLVED) {
+//         onResolve(this.value)
+//     }
+//     if (this.status === REJECTED) {
+//         onReject(this.value)
+//     }
+// }
+
+
+
+
+// const jie = (fn, time) => {
+//     let lastNum = 0
+//     return (...args) => {
+//         let curNum = new Date().getTime()
+//         if (curNum - lastNum >= time) {
+//             lastNum = curNum
+//             fn.apply(this, args)
+//         }
+//     }
+// }
+
+
+// const fangdou = (fn, time) => {
+//     let timer = null
+//     return function(...args) {
+//         if (timer) { clearTimeout(timer) }
+//         timer = setTimeout(() => {
+//             fn.apply(this, args)
+//         }, time)
+//     }
+// }
+
+// const isObj = (val) => typeof val === 'object' && val !== null
+// function deepClone(obj) {
+//     const newObj = obj instanceof Array ? [] : {};
+//     for (const key in obj) {
+//         if (Object.hasOwnProperty.call(obj, key)) {
+//             const item = obj[key];
+//             newObj[key] = isObj(item) ? deepClone(item) : item
+//         }
+//     }
+//     return newObj
+// }
+
+// function myNew(fn, ...args) {
+//     let newObj = Object.create(fn.prototype)
+//     let res = fn.call(newObj, ...args)
+//     return res && typeof res === 'object' ? res : newObj
+// }
+
+
+// function add(x) {
+//     let sum = x
+//     let tmp = function(y) {
+//         sum = sum + y
+//         return tmp
+//     }
+//     tmp.toString = () => sum
+//     return tmp
+// }
+
+// // 找出 2,3,8
+// var a = [1, 2, 4]
+// var b = [1, 3, 8, 4]
+
+// const newArr = a.concat(b).filter((item, _, arr) => {
+//     return arr.indexOf(item) === arr.lastIndexOf(item)
+// })
+
+// // 判断完全平方数
+// var fn = function(num) {
+//     return num ** 0.5 % 1 == 0
+// }
+
+// // 实现一个flat
+// const flat = function(arr, deep = 1) {
+//     let result = []
+//     arr.forEach(item => {
+//         if (Array.isArray(item) && deep > 0) {
+//             result = result.concat(flat(item, deep -1))
+//         } else {
+//             result.push(item)
+//         }
+//     });
+//     return result
+// }
+
+
+
+
+
+
+
+
+// const d = {
+//     val: 'd',
+//     next: null  // c
+// }
+
+// const c = {
+//     val: 'c',
+//     next: d  // b
+// }
+
+// const b = {
+//     val: 'b',
+//     next: c   // a
+// }
+
+// const a = {
+//     val: 'a',
+//     next: b  // null
+// }
+// const arr = []
+// const fn = (obj) => {
+//     if (!obj.next) return
+//     arr.push(obj)
+// }
+
+
+
+
+
+// const items = [1, [2, 3]];
+
+
+// const itemsFn = (arr) => {
+//     let result = []
+//     arr.forEach(item => {
+//         if (Array.isArray(item)) {
+//             result = [...result, ...itemsFn(item)]
+//         } else {
+//             result.push(item)
+//         }
+//     })
+//     return result
+// }
+
+// console.log(itemsFn(items))
+
+// const arr = [1, [2, [3, 4]]];
+
+// function flatten(arr) {
+//     return arr.reduce(function(prev, next){
+//         return prev.concat(Array.isArray(next) ? flatten(next) : next)
+//     }, [])
+// }
+
+// console.log(flatten(arr));// [1, 2, 3, 4，5]
+
+// function myInstanceof(left, right) {
+//     while (true) {
+//       if (left === null) {
+//         return false;
+//       }
+//       if (left.__proto__ === right.prototype) {
+//         return true;
+//       }
+//       left = left.__proto__;
+//     }
+// }
+
+// // 10 - 100 随机数
+// function fn(min, max) {
+//     const range = max - min
+//     const rodom = Math.random()
+//     return min + Math.round(range * rodom)
+// }
+// fn(10, 100)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
